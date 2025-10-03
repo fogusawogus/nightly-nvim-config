@@ -74,11 +74,11 @@ local function lsp()
     info = " %#LspDiagnosticsSignInformation# " .. count["info"]
   end
 
-  return errors .. warnings .. hints .. info .. "%#Normal#"
+  return errors .. warnings .. hints .. info
 end
 
 local function filetype()
-  return string.format(" %s ", vim.bo.filetype):upper()
+  return string.format("%s", vim.bo.filetype):upper()
 end
 
 local function lineinfo()
@@ -93,9 +93,9 @@ local vcs = function()
   if not git_info or git_info.head == "" then
     return ""
   end
-  local added = git_info.added and ("%#GitSignsAdd#+" .. git_info.added .. " ") or ""
-  local changed = git_info.changed and ("%#GitSignsChange#~" .. git_info.changed .. " ") or ""
-  local removed = git_info.removed and ("%#GitSignsDelete#-" .. git_info.removed .. " ") or ""
+  local added = git_info.added and ("%##+" .. git_info.added .. " ") or ""
+  local changed = git_info.changed and ("%##~" .. git_info.changed .. " ") or ""
+  local removed = git_info.removed and ("%##-" .. git_info.removed .. " ") or ""
   if git_info.added == 0 then
     added = ""
   end
@@ -106,12 +106,12 @@ local vcs = function()
     removed = ""
   end
   return table.concat {
-     " ",
+      " ",
      added,
      changed,
      removed,
      git_info.head,
-     " %#Normal#",
+     " ",
   }
 end
 
@@ -119,9 +119,12 @@ Statusline.active = function()
   return table.concat {
     "%#Statusline#",
     mode(),
+    "|",
     filepath(),
     filename(),
+    "|",
     vcs(),
+    "|",
     lsp(),
     "%=%#StatusLineExtra#",
     filetype(),
