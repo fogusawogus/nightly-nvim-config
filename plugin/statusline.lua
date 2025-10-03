@@ -24,7 +24,7 @@ local modes = {
 
 local function mode ()
     local current_mode = vim.api.nvim_get_mode().mode
-    return string.format(" %s |", modes[current_mode]):upper()
+    return string.format(" %s ", modes[current_mode]):upper()
 end
 
 local function filepath() 
@@ -106,7 +106,6 @@ local vcs = function()
     removed = ""
   end
   return table.concat {
-      "|",
       " ",
      added,
      changed,
@@ -121,8 +120,11 @@ Statusline.active = function()
   return table.concat {
     "%#Statusline#",
     mode(),
+    "|",
     filepath(),
     filename(),
+    "%{&mod?'[+] ':''}",
+    "|",
     vcs(),
     lsp(),
     "%=%#StatusLineExtra#",
@@ -130,6 +132,7 @@ Statusline.active = function()
     lineinfo(),
   }
 end
+
 
 function Statusline.inactive()
   return " %F"
