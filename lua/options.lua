@@ -15,7 +15,7 @@ opt.number = true
 opt.wrap = false
 opt.relativenumber = true
 opt.numberwidth = 2
-opt.cursorline = true
+-- opt.cursorline = true
 opt.scrolloff = 8
 opt.inccommand = "nosplit"
 opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undodir"
@@ -23,5 +23,6 @@ opt.undofile = true
 vim.o.hlsearch = false
 vim.diagnostic.config({ signs = false })
 vim.diagnostic.config({ underline = false })
+opt.winborder = "rounded"
 
 vim.cmd.filetype("plugin indent on")
