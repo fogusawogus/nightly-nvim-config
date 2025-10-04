@@ -11,4 +11,4 @@ require('lua.plugin.oil')
 require('lua.plugin.gitsigns')
 require('lua.plugin.kanagawa')
 require('lua.plugin.trouble')
-
+require('lua.plugin.autopairs')
