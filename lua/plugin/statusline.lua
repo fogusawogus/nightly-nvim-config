@@ -118,6 +118,9 @@ end
 local lspAttached = function()
     local finalText = {}
     local attachedLsps = vim.lsp.get_clients()
+    if next(attachedLsps) == nil then
+        return ""
+    end
     for _, i in ipairs(attachedLsps) do
         table.insert(finalText, i.name)
     end
