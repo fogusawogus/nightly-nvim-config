@@ -106,12 +106,12 @@ local vcs = function()
     removed = ""
   end
   return table.concat {
-      " ",
+     " (",
      added,
      changed,
      removed,
      git_info.head,
-     " ",
+     ") ",
   }
 end
 
