@@ -11,13 +11,13 @@ autocmd("TextYankPost", {
 	group = highlight_group,
 })
 
-autocmd("BufEnter", {
-	pattern = { "*.", ".*", "*.*" },
-	callback = function()
-		vim.treesitter.start()
-	end,
-	group = bufEnter,
-})
+-- autocmd("BufEnter", {
+-- 	pattern = { "*.", ".*", "*.*" },
+-- 	callback = function()
+-- 		vim.treesitter.start()
+-- 	end,
+-- 	group = bufEnter,
+-- })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
 	callback = function(args)

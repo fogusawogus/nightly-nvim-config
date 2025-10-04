@@ -62,23 +62,23 @@ local function lsp()
   local info = ""
 
   if count["errors"] ~= 0 then
-    errors = " %#LspDiagnosticsSignError# " .. count["errors"]
+    errors = " %#LspDiagnosticsSignError#E" .. count["errors"]
   end
   if count["warnings"] ~= 0 then
-    warnings = " %#LspDiagnosticsSignWarning# " .. count["warnings"]
+    warnings = " %#LspDiagnosticsSignWarning#W" .. count["warnings"]
   end
   if count["hints"] ~= 0 then
-    hints = " %#LspDiagnosticsSignHint# " .. count["hints"]
+    hints = " %#LspDiagnosticsSignHint#H" .. count["hints"]
   end
   if count["info"] ~= 0 then
-    info = " %#LspDiagnosticsSignInformation# " .. count["info"]
+    info = " %#LspDiagnosticsSignInformation#I" .. count["info"]
   end
 
   return errors .. warnings .. hints .. info
 end
 
 local function filetype()
-  return string.format("%s", vim.bo.filetype):upper()
+  return string.format("%s", vim.bo.filetype)
 end
 
 local function lineinfo()
@@ -115,6 +115,16 @@ local vcs = function()
   }
 end
 
+local lspAttached = function()
+    local finalText = {}
+    local attachedLsps = vim.lsp.get_clients()
+    for _, i in ipairs(attachedLsps) do
+        table.insert(finalText, i.name)
+    end
+    return " (LSPs: " .. table.concat(finalText, " ") .. ") "
+end
+
+
 Statusline.active = function()
   return table.concat {
     "%#Statusline#",
@@ -125,6 +135,7 @@ Statusline.active = function()
     vcs(),
     lsp(),
     "%=%#StatusLineExtra#",
+    lspAttached(),
     filetype(),
     lineinfo(),
   }
