@@ -112,7 +112,6 @@ local vcs = function()
      removed,
      git_info.head,
      " ",
-     "|",
   }
 end
 
@@ -120,11 +119,9 @@ Statusline.active = function()
   return table.concat {
     "%#Statusline#",
     mode(),
-    "|",
     filepath(),
     filename(),
     "%{&mod?'[+] ':''}",
-    "|",
     vcs(),
     lsp(),
     "%=%#StatusLineExtra#",
