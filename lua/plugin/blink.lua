@@ -4,7 +4,7 @@ vim.pack.add({
 
 require('blink.cmp').setup({
       cmdline = { enabled = false },
-      fuzzy = {implementation = 'lua'},
+      fuzzy = {implementation = 'rust'},
 
       keymap = {
         preset = 'default',

@@ -21,6 +21,7 @@ vim.keymap.set("n", "<leader>t", "<cmd>term<cr>")
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
+vim.keymap.set({'n','i','v'}, '<C-[>', '<Esc>')
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
