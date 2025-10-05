@@ -29,6 +29,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+autocmd("BufEnter", {
+    pattern = {"*.c", "*.cpp"},
+    callback = function ()
+        vim.cmd("set makeprg=./build.sh")
+    end,
+})
+
 -- Format buffer on save
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 -- 	callback = function()

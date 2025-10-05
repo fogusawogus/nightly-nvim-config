@@ -7,4 +7,5 @@ require('mini.surround').setup()
 require('mini.pick').setup()
 
 require('mini.icons').setup()
+require('mini.extra').setup()
 
