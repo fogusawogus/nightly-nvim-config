@@ -78,7 +78,7 @@ local function lsp()
 end
 
 local function filetype()
-  return string.format(".%s", vim.bo.filetype)
+  return string.format("%s", vim.bo.filetype)
 end
 
 local function lineinfo()
@@ -138,7 +138,6 @@ Statusline.active = function()
     vcs(),
     lsp(),
     "%=%#StatusLineExtra#",
-    lspAttached(),
     filetype(),
     lineinfo(),
   }
