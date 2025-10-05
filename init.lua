@@ -1,6 +1,7 @@
 require('options')
 require('keymaps')
 require('autocmd')
+require('neovide')
 require('plugin.lsp')
 require('plugin.treesitter')
 require('plugin.blink')
