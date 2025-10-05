@@ -28,4 +28,4 @@ opt.showmode = false
 opt.laststatus = 3
 
 vim.cmd.filetype("plugin indent on")
-vim.o.background = 'light'
+vim.o.background = 'dark'
