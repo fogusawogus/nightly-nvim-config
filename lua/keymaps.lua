@@ -26,9 +26,15 @@ vim.keymap.set("n", "gca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<Space>", "<Nop>")
 vim.keymap.set("n", "<leader>rr", "<cmd>make<cr>")
 vim.keymap.set('n', '<leader>rf', function ()
+<<<<<<< HEAD
     vim.ui.input({ prompt = "run file: " }, function (input)
         if input == nil then
             return 
+=======
+    vim.ui.input({ prompt = 'run file: ' }, function (input)
+        if input == nil then
+            return 0
+>>>>>>> 5e4f57ccdccb1b5d6cccb1c27f616dbc0bd62138
         end
         vim.cmd('!' .. input)
     end)
@@ -36,7 +42,11 @@ end)
 vim.keymap.set("n", "<leader>rs", function()
 	vim.ui.input({ prompt = "makeprg: " }, function(input)
         if input == nil then
+<<<<<<< HEAD
             return
+=======
+            return 0
+>>>>>>> 5e4f57ccdccb1b5d6cccb1c27f616dbc0bd62138
         end
 		vim.cmd("set makeprg=" .. input)
 	end)
