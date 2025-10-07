@@ -4,5 +4,4 @@ vim.pack.add({
 
 require("snacks").setup({
 	lazygit = { enabled = true },
-	indent = { enabled = true },
 })
