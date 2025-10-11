@@ -29,6 +29,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.lsp.completion.enable(true, ev.data.client_id, ev.buf)
+  end,
+})
+
 autocmd("BufEnter", {
     pattern = {"*.c", "*.cpp"},
     callback = function ()
