@@ -19,8 +19,9 @@ require('oil').setup({
         'icon',
         'permissions',
         'size',
+        'mtime'
     },
-    skip_confirm_for_simple_edits = true,
+    skip_confirm_for_simple_edits = false,
     view_options = {
         show_hidden = true,
     },
