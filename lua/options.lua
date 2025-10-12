@@ -7,14 +7,15 @@ opt.ignorecase = true
 opt.swapfile = false
 opt.autoindent = true
 opt.expandtab = true
+opt.smarttab = false
 opt.tabstop = 4
-opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.shiftround = true
 opt.number = true
 opt.wrap = false
 opt.relativenumber = true
 opt.numberwidth = 2
+opt.smartindent = true
 -- opt.cursorline = true
 opt.scrolloff = 8
 opt.inccommand = "nosplit"
@@ -24,7 +25,7 @@ vim.o.hlsearch = false
 vim.diagnostic.config({ signs = false })
 vim.diagnostic.config({ underline = false })
 opt.winborder = "rounded"
-opt.showmode = false
+-- opt.showmode = false
 opt.laststatus = 3
 
 vim.cmd.filetype("plugin indent on")
