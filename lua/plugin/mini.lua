@@ -15,7 +15,9 @@ require("mini.indentscope").setup({
 
 require("mini.icons").setup()
 require("mini.extra").setup()
+require('mini.sessions').setup()
 require("mini.starter").setup()
+require('mini.misc').setup()
 
 local miniclue = require("mini.clue")
 require("mini.clue").setup({
