@@ -18,7 +18,6 @@ autocmd("TextYankPost", {
 -- 	end,
 -- 	group = bufEnter,
 -- })
---
 
 vim.api.nvim_create_autocmd("BufReadPost", {
 	callback = function(args)
@@ -36,11 +35,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 --     end
 -- })
 
--- vim.api.nvim_create_autocmd("LspAttach", {
---   callback = function(ev)
---     vim.lsp.completion.enable(true, ev.data.client_id, ev.buf)
---   end,
--- })
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.lsp.completion.enable(true, ev.data.client_id, ev.buf)
+  end,
+})
 
 autocmd("BufEnter", {
     pattern = {"*.c", "*.cpp"},

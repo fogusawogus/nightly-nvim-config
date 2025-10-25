@@ -26,6 +26,9 @@ require("mini.clue").setup({
 		{ mode = "n", keys = "<Leader>" },
 		{ mode = "x", keys = "<Leader>" },
 
+		-- Built-in completion
+		{ mode = "i", keys = "<C-x>" },
+
 		-- `g` key
 		{ mode = "n", keys = "g" },
 		{ mode = "x", keys = "g" },

@@ -25,7 +25,7 @@ vim.o.hlsearch = false
 vim.diagnostic.config({ signs = false })
 vim.diagnostic.config({ underline = false })
 opt.winborder = "rounded"
-opt.showmode = false
+-- opt.showmode = false
 opt.laststatus = 3
 
 vim.cmd.filetype("plugin indent on")

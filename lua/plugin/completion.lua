@@ -1,6 +1,6 @@
--- vim.o.complete = '.,o,w,b,u,t,i,d'
--- vim.o.completeopt = 'fuzzy,menuone,noinsert'
--- vim.o.pumheight = 7
+vim.o.complete = '.,o,w,b,u,t,i,d'
+vim.o.completeopt = 'fuzzy,menuone,noinsert'
+vim.o.pumheight = 7
 
 -- vim.api.nvim_create_augroup("my-luasnip", {})
 -- vim.api.nvim_create_autocmd('CompleteDone', {
