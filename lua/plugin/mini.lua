@@ -13,10 +13,10 @@ require("mini.indentscope").setup({
 	symbol = "|",
 })
 
-require("mini.icons").setup()
+-- require("mini.icons").setup()
 require("mini.extra").setup()
-require('mini.sessions').setup()
-require("mini.starter").setup()
+-- require('mini.sessions').setup()
+-- require("mini.starter").setup()
 require('mini.misc').setup()
 
 local miniclue = require("mini.clue")
@@ -27,7 +27,7 @@ require("mini.clue").setup({
 		{ mode = "x", keys = "<Leader>" },
 
 		-- Built-in completion
-		{ mode = "i", keys = "<C-x>" },
+		-- { mode = "i", keys = "<C-x>" },
 
 		-- `g` key
 		{ mode = "n", keys = "g" },
