@@ -6,3 +6,11 @@ vim.pack.add({
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+vim.lsp.config('clangd', {
+    capabilities = {
+        Completion = {
+            ArgumentLists = 'Delimiters'
+        }
+    }
+})
