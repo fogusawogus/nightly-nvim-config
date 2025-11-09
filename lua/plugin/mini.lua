@@ -13,7 +13,9 @@ require("mini.pick").setup()
 -- 	symbol = "|",
 -- })
 
--- require("mini.icons").setup()
+require("mini.icons").setup({
+    style = 'ascii'
+})
 require("mini.extra").setup()
 -- require('mini.sessions').setup()
 -- require("mini.starter").setup()

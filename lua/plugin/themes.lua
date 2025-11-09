@@ -39,6 +39,10 @@ require("kanagawa").setup({
 			PmenuThumb = { bg = theme.ui.bg_p2 },
 		}
 	end,
+	commentStyle = { italic = false },
+	statementStyle = { bold = false },
+	keywordStyle = { italic = false },
+	undercurl = false,
 })
 
 vim.cmd("colorscheme kanagawa-dragon")
