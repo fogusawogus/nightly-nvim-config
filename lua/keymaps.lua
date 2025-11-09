@@ -27,19 +27,19 @@ vim.keymap.set("n", "<Space>", "<Nop>")
 vim.keymap.set("n", "<leader>rr", "<cmd>make<cr>", {desc = "Make"})
 vim.keymap.set("n", "q;", "q:")
 vim.keymap.set("n", "<leader>rf", function()
-	vim.ui.input({ prompt = "run file: " }, function(input)
-		if input == nil then
-			return 0
-		end
-		vim.cmd("!./" .. input)
-	end)
+    vim.ui.input({ prompt = "run file: " }, function(input)
+        if input == nil then
+            return 0
+        end
+        vim.cmd("!./" .. input)
+    end)
 end)
 vim.keymap.set("n", "<leader>rs", function()
-	vim.ui.input({ prompt = "makeprg: " }, function(input)
-		if input == nil then
-		end
-		vim.cmd("set makeprg=" .. input)
-	end)
+    vim.ui.input({ prompt = "makeprg: " }, function(input)
+        if input == nil then
+        end
+        vim.cmd("set makeprg=" .. input)
+    end)
 end)
 
 local opts = { noremap = true, silent = true }
@@ -57,3 +57,5 @@ vim.keymap.set("n", "da", "<cmd>%d<cr>")
 vim.keymap.set("n", "<leader>gg", "<cmd>lua Snacks.lazygit()<cr>", {desc = "lazygit"})
 vim.keymap.set('n', '<leader>co', '<cmd>copen<cr>', {desc = 'Quickfix open'})
 vim.keymap.set('n','<leader>cc', '<cmd>cclose<cr>', {desc = 'Quickfix close'})
+vim.keymap.set('n', '<leader>cn', '<cmd>cnext<cr>', {desc = 'Quickfix next'})
+vim.keymap.set('n','<leader>cp', '<cmd>cprev<cr>', {desc = 'Quickfix previous'})

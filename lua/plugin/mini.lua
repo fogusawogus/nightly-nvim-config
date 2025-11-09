@@ -5,13 +5,13 @@ vim.pack.add({
 require("mini.ai").setup()
 require("mini.surround").setup()
 require("mini.pick").setup()
-require("mini.indentscope").setup({
-	draw = {
-		animation = require("mini.indentscope").gen_animation.none(),
-		delay = 0,
-	},
-	symbol = "|",
-})
+-- require("mini.indentscope").setup({
+-- 	draw = {
+-- 		animation = require("mini.indentscope").gen_animation.none(),
+-- 		delay = 0,
+-- 	},
+-- 	symbol = "|",
+-- })
 
 -- require("mini.icons").setup()
 require("mini.extra").setup()

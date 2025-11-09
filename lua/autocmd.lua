@@ -35,17 +35,24 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 --     end
 -- })
 
--- vim.api.nvim_create_autocmd("LspAttach", {
---   callback = function(ev)
---     vim.lsp.completion.enable(true, ev.data.client_id, ev.buf)
---   end,
--- })
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.lsp.completion.enable(true, ev.data.client_id, ev.buf)
+  end,
+})
 
 autocmd("BufEnter", {
     pattern = {"*.c", "*.cpp"},
     callback = function ()
         vim.cmd("set makeprg=./build.sh")
     end,
+})
+
+autocmd('BufEnter', {
+    pattern = {"*.go", "*.mod"},
+    callback = function ()
+        vim.cmd("set makeprg=go")
+    end
 })
 
 -- Format buffer on save

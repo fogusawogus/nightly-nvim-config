@@ -7,7 +7,7 @@ opt.ignorecase = true
 opt.swapfile = false
 opt.autoindent = true
 opt.expandtab = true
-opt.smarttab = false
+opt.softtabstop = 4
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.shiftround = true
@@ -27,6 +27,8 @@ vim.diagnostic.config({ underline = false })
 opt.winborder = "rounded"
 -- opt.showmode = false
 opt.laststatus = 3
+opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '·', lead = '·'}
 
 vim.cmd.filetype("plugin indent on")
 vim.o.background = 'dark'

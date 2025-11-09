@@ -3,7 +3,8 @@ vim.pack.add({
 	{ src = "https://github.com/nyoom-engineering/oxocarbon.nvim" },
 	{ src = "https://github.com/EdenEast/nightfox.nvim" },
 	{ src = "https://github.com/ronisbr/nano-theme.nvim" },
-    { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
+	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
+	{ src = "https://github.com/thesimonho/kanagawa-paper.nvim" },
 })
 
 require("kanagawa").setup({
