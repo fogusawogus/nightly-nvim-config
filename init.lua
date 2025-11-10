@@ -212,7 +212,7 @@ local opt = vim.o
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- TAG_OPTIONS
+-- OPTIONS
 
 opt.guicursor = "i:block"
 opt.signcolumn = "yes:1"
@@ -247,7 +247,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "·", lead = "·" }
 vim.cmd.filetype("plugin indent on")
 vim.o.background = "dark"
 
--- TAG_AUTOCOMMANDS
+-- AUTOCOMMANDS
 
 local highlight_group = augroup("YankHighlight", { clear = true })
 local bufEnter = augroup("BufEnter", { clear = true })
@@ -267,15 +267,15 @@ autocmd("TextYankPost", {
 -- 	group = bufEnter,
 -- })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
-	callback = function(args)
-		local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
-		local line_count = vim.api.nvim_buf_line_count(args.buf)
-		if mark[1] > 0 and mark[1] <= line_count then
-			vim.cmd('normal! g`"zz')
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+-- 	callback = function(args)
+-- 		local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+-- 		local line_count = vim.api.nvim_buf_line_count(args.buf)
+-- 		if mark[1] > 0 and mark[1] <= line_count then
+-- 			vim.cmd('normal! g`"zz')
+-- 		end
+-- 	end,
+-- })
 
 -- vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedI' }, {
 --     callback = function()
@@ -310,7 +310,7 @@ autocmd("BufEnter", {
 -- 	end,
 -- })
 
--- TAG_KEYMAPS
+-- KEYMAPS
 
 local s = { silent = true }
 
@@ -374,7 +374,7 @@ vim.keymap.set("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Quickfix close" }
 vim.keymap.set("n", "<leader>cn", "<cmd>cnext<cr>", { desc = "Quickfix next" })
 vim.keymap.set("n", "<leader>cp", "<cmd>cprev<cr>", { desc = "Quickfix previous" })
 
--- TAG_NEOVIDE
+-- NEOVIDE
 
 if vim.g.neovide then
 	vim.o.guifont = "Personal Iosevka:h16"
@@ -385,7 +385,7 @@ if vim.g.neovide then
 	vim.g.neovide_window_blurred = false
 end
 
--- TAG_COMPLETION
+-- COMPLETION
 
 vim.o.complete = ".,o,w,b,u,t,i,d"
 vim.o.completeopt = "fuzzy,menuone,noinsert"
