@@ -136,7 +136,7 @@ Statusline.active = function()
 		filename(),
 		"%{&mod?'[+] ':''}",
 		vcs(),
-		lsp(),
+		-- lsp(),
 		"%=%#StatusLineExtra#",
 		filetype(),
 		lineinfo(),

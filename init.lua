@@ -13,7 +13,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/benomahony/oil-git.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/folke/trouble.nvim" },
+	-- { src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://codeberg.org/sj2tpgk/nvim-eldoc" },
@@ -29,7 +29,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 	indent = {
-		enable = true,
+		enable = false,
 	},
 })
 local ls = require("luasnip")
@@ -188,10 +188,10 @@ require("oil").setup({
 
 require("oil-git").setup()
 require("gitsigns").setup({})
-require("trouble").setup({
-	auto_close = true,
-	focus = true,
-})
+-- require("trouble").setup({
+-- 	auto_close = true,
+-- 	focus = true,
+-- })
 require("nvim-autopairs").setup({
 	map_c_w = true,
 })
@@ -361,8 +361,8 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "<leader>sf", "<cmd>Pick files<cr>", { desc = "Pick files" })
 vim.keymap.set("n", "<leader>sg", "<cmd>Pick grep_live<cr>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader><leader>", "<cmd>Pick buffers<cr>", { desc = "Pick buffers" })
-vim.keymap.set("n", "<leader>dd", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics" })
-vim.keymap.set("n", "<leader>dq", "<cmd>Trouble qflist toggle <cr>", { desc = "Quickfix list" })
+-- vim.keymap.set("n", "<leader>dd", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics" })
+-- vim.keymap.set("n", "<leader>dq", "<cmd>Trouble qflist toggle <cr>", { desc = "Quickfix list" })
 vim.keymap.set({ "n", "v" }, ";", ":")
 vim.keymap.set("n", "<leader>;", "q:", { desc = "Command window" })
 vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "Search help" })
