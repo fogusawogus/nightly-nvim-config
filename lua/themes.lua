@@ -43,6 +43,7 @@ require("kanagawa").setup({
 			PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
 			PmenuSbar = { bg = theme.ui.bg_m1 },
 			PmenuThumb = { bg = theme.ui.bg_p2 },
+            Boolean = {bold = false}
 		}
 	end,
 	commentStyle = { italic = false },
