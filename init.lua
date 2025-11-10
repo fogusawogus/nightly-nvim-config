@@ -259,6 +259,13 @@ autocmd("TextYankPost", {
 	group = highlight_group,
 })
 
+autocmd("BufEnter", {
+    pattern = ("*.typ"),
+    callback = function()
+        vim.cmd("set wrap")
+    end
+})
+
 -- autocmd("BufEnter", {
 -- 	pattern = { "*.", ".*", "*.*" },
 -- 	callback = function()
