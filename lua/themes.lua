@@ -5,6 +5,12 @@ vim.pack.add({
 	{ src = "https://github.com/ronisbr/nano-theme.nvim" },
 	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
 	{ src = "https://github.com/thesimonho/kanagawa-paper.nvim" },
+    { src = "https://github.com/vague-theme/vague.nvim" }
+})
+
+require('vague').setup({
+    bold = false,
+    italic = false
 })
 
 require("kanagawa").setup({
@@ -45,4 +51,4 @@ require("kanagawa").setup({
 	undercurl = false,
 })
 
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme vague")
