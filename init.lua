@@ -1,5 +1,6 @@
 require("statusline")
 require("themes")
+vim.g.mapleader = " "
 
 vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -115,15 +116,15 @@ require("mini.extra").setup()
 -- require("mini.starter").setup()
 require("mini.misc").setup()
 
-local miniclue = require("mini.clue")
-require("mini.clue").setup({
+local miniclue = require('mini.clue')
+miniclue.setup({
 	triggers = {
 		-- Leader triggers
 		{ mode = "n", keys = "<Leader>" },
 		{ mode = "x", keys = "<Leader>" },
 
 		-- Built-in completion
-		-- { mode = "i", keys = "<C-x>" },
+		{ mode = "i", keys = "<C-x>" },
 
 		-- `g` key
 		{ mode = "n", keys = "g" },
@@ -159,6 +160,7 @@ require("mini.clue").setup({
 		miniclue.gen_clues.z(),
 	},
 })
+
 function _G.get_oil_winbar()
 	local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
 	local dir = require("oil").get_current_dir(bufnr)
@@ -214,6 +216,7 @@ local augroup = vim.api.nvim_create_augroup
 
 -- OPTIONS
 
+vim.cmd("set shortmess+=I")
 opt.guicursor = "i:block"
 opt.signcolumn = "yes:1"
 opt.termguicolors = true
@@ -321,7 +324,6 @@ autocmd("BufEnter", {
 
 local s = { silent = true }
 
-vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>w", "<CMD>w<cr>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
@@ -390,6 +392,7 @@ if vim.g.neovide then
 	vim.g.neovide_position_animation_length = 0
 
 	vim.g.neovide_window_blurred = false
+    vim.keymap.set('n', '<leader>q', "<cmd>bd<cr>")
 end
 
 -- COMPLETION
